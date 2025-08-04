@@ -1,9 +1,12 @@
 //Multilevel Inheritance Example
-class father{
-    char gender = 'M';
+class grandfather{
+     char gender = 'M';
     void print(){
         System.out.println("hello");
     }
+}
+class father extends grandfather{
+   
 }
 class son extends father{
     
