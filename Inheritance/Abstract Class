@@ -1,0 +1,37 @@
+//in abstract class we could  not create object
+//but we can create reference variable of abstract class
+abstract class User{
+    abstract void display();//abstract method should be implemented in child class
+    abstract void login();
+}
+class Student extends User{
+    void display(){
+        System.out.println("Hello world from Student class");
+    }
+    void login(){
+        System.out.println("Student logged in");
+    }
+
+}
+class Teacher extends User{
+    void display(){
+        System.out.println("Hello world from Student class");
+    }
+    void login(){
+        System.out.println("Student logged in");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Student s1= new Student();
+        s1.display();
+        s1.login();
+        User u1 = new Student(); // reference variable of abstract class
+        u1.display(); // calling method using reference variable
+        u1.login(); // calling method using reference variable
+        User u2 = new Teacher();
+        u2.display();
+        u2.login();
+        
+    }
+}
