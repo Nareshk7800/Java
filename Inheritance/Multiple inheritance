@@ -1,0 +1,32 @@
+//multiple inheritance using interfaces
+interface Father{
+    void method();
+    void method2();
+}
+interface Mother{
+    void method3();
+    void method23();
+}
+class Son implements Father, Mother{
+    public void method(){
+        System.out.println("Son's method");
+    }
+    public void method2(){
+        System.out.println("Son's method2");
+    }
+    public void method3(){
+        System.out.println("Son's method3");
+    }
+    public void method23(){
+        System.out.println("Son's method23");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Son son = new Son();
+        son.method();
+        son.method2();
+        son.method3();
+        son.method23(); 
+    }
+}
