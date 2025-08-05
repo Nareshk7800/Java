@@ -1,0 +1,23 @@
+class User{
+    private String name;
+    private int age;
+    void setname(String num){
+        name= num;
+    }
+    void setage(int number){
+        age=number;
+    }
+    String getname(){
+        return name;
+    }
+    int getage(){
+        return age;
+    }
+    public static void main(String[] args){
+        User u = new User();
+        u.setname("naresh");
+        u.setage(21);
+        System.out.println(u.getname());
+        System.out.println(u.getage());
+    }
+}
