@@ -1,0 +1,54 @@
+//static variables
+// class user{
+//     static int a = 10;
+// }
+// class Main{
+//     public static void main(String[] args){
+//         System.out.println(user.a);
+//     }
+// }
+//
+
+
+//static methods
+// class user{
+//     static void display(){
+//         System.out.println("Hello evryone");
+//     }
+// }
+// class Main{
+//     public static void main(String[] args) {
+//         user.display();
+//     }
+// }
+
+
+//static blocks
+// class user{
+//     static{
+//         System.out.println("im naresh and im a java developer");
+//     }
+//     public static void main(String[] args) {
+//         System.out.println("Hello everyone");
+//     }
+// }
+
+
+
+//static nested class
+// class User{
+//     static int a=8;
+//     static int b=7;
+//     static class Nested{
+//         void display(){
+//             System.out.println("a");
+//             System.out.println("b");
+//         }
+//     }
+//     public static void main(String[] args){
+//         System.out.println(User.a);
+//         System.out.println(User.b);
+
+//         User.Nested dis = new User.Nested();
+//     dis.display();    }
+// }
