@@ -1,0 +1,21 @@
+class User{
+    static void check(int age){
+        if(age<18){
+            throw new ArithmeticException("Age is Invalid");
+        }
+        else{
+            System.out.println("Age is Valid");
+        }
+    }
+    public static void main(String[] args) {
+        try{
+            check(2);
+        }
+        catch(ArithmeticException obj){
+            System.out.println(obj.getMessage());
+        }
+        finally{
+            System.out.println("Finnally Block Executed");
+        }
+    }
+}
