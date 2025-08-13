@@ -1,0 +1,23 @@
+class UserDefinedException extends Exception{
+    UserDefinedException(String msg){
+        super(msg);
+    }
+}
+class User{
+    static void check (int age)throws UserDefinedException{  //throws acts wrap the full methods of error
+        if(age<18){
+            throw new UserDefinedException("Enter the Valid age");
+        }
+    }
+    public static void main(String[] args) {
+        try{
+            check(2);
+        }
+        catch(UserDefinedException obj){
+            System.out.println(obj.getMessage());
+        }
+        finally{
+            System.out.println("Finally block");
+        }
+    }
+}
