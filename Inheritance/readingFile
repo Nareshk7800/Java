@@ -1,0 +1,17 @@
+import java.util.Scanner;
+import java.io.File;
+class User{
+    public static void main(String[] args) {
+        try{
+            File f = new File("src/nk.txt");//your text file is inside same folder then only it prints the text contents
+            try (Scanner sc = new Scanner(f)) {
+                while(sc.hasNextLine()){
+                    System.out.println(sc.nextLine());
+                }
+            }
+        }
+        catch(Exception E){
+            System.out.println(E);
+        }
+    }
+}
