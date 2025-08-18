@@ -1,0 +1,16 @@
+import java.io.FileWriter;
+import java.io.File;
+class User{
+    public static void main(String[] args) {
+        try{
+            File f = new File("src/User.txt");//file should exist in same folder
+            FileWriter fw  = new FileWriter(f);
+            fw.write("hello everyone welcome you all!!");
+            fw.close();
+            
+        }
+        catch(Exception E){
+            System.out.println(E);
+        }
+    }
+}
