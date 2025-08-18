@@ -3,11 +3,10 @@ import java.io.File;
 class User{
     public static void main(String[] args) {
         try{
-            File f = new File("src/nk.txt");//your text file is inside same folder then only it prints the text contents
-            try (Scanner sc = new Scanner(f)) {
-                while(sc.hasNextLine()){
-                    System.out.println(sc.nextLine());
-                }
+            File f = new File("src/User.txt");//in this line text file should be in the same folder
+            Scanner sc = new Scanner(f);
+            while(sc.hasNextLine()){
+                System.out.println(sc.nextLine());
             }
         }
         catch(Exception E){
