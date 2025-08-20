@@ -1,0 +1,95 @@
+import java.util.*;
+class User{
+    private int arr[];
+    private int size;
+    int cap=8;
+    User(){
+        arr=new int[cap];
+        size=0;
+    }
+    public void add(int val){
+        if(size==cap){
+            expand();
+        }
+        arr[size++]=val;
+    }
+    public void expand(){
+        // cap is final, so we need to remove 'final' and make it an instance variable
+        int newCap = cap * 2;
+        arr = Arrays.copyOf(arr, newCap);
+        // update cap if it's not final
+    }
+    void display(){
+        for(int i=0;i<size;i++){
+            System.out.println(arr[i] + "");
+        }
+    }
+    void position(int pos, int val){
+        if(pos<0){
+            System.out.println("Invalid position");
+        }
+        if(size==cap){
+            expand();
+        }
+        for(int i=size-1;i>=pos;i--){
+            arr[i-1]=arr[i];
+        }
+        arr[pos]=val;
+        size++;
+    }
+    void delete(int pos){
+        if(pos<0){
+            System.out.println("Invalid position");
+        }
+        for(int i = pos+1;i<size;i++){
+            arr[i+1]=arr[i];
+
+        }
+    }
+
+}
+class Dyanmic{
+    public static void main(String[] args) {
+    int val,pos;
+    User list = new User();
+    Scanner sc = new Scanner(System.in);
+    while(true){
+        System.out.println("\n---------------------------");
+        System.out.println("Insert the value");
+        System.out.println("Display the value");
+        System.out.println("Insert at specific position");
+        System.out.println("Delete the pos");
+        System.out.println("Exist");
+        System.out.println("-----------------------------");
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1: System.out.println("Enter the value");
+                    val = sc.nextInt();
+                    list.add(val);
+                    break;
+            case 2: System.out.print("Display the value");
+                    list.display();
+                    break;
+            case 3: System.out.println("Enter the position");
+                    pos = sc.nextInt();
+                    if(pos<0){
+                        System.out.println("Invalid position");
+                    }
+                    val = sc.nextInt();
+                    list.position(pos,val);
+                    break;
+            case 4: System.out.println("Delete the position");
+                    pos =sc.nextInt();
+                    if(pos<0){
+                        System.out.println("Invalid position");
+                    }
+                    list.delete(pos);
+                    break;
+            case 5: System.exit(0);
+            default: System.out.println("Invalid input");
+            }
+            //sc.close();
+        }
+    //sc.close();
+    }
+}
