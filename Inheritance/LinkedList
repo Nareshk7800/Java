@@ -1,0 +1,109 @@
+public class LinkedList {
+    Node head; // head of list
+
+    // Node class
+    class Node {
+        int data;
+        Node next;
+    }
+
+    // Insert at end
+    public void insert(int data) {
+        Node node = new Node();
+        node.data = data;
+        node.next = null;
+
+        if (head == null) {
+            head = node;
+        } else {
+            Node n = head;
+            while (n.next != null) {
+                n = n.next;
+            }
+            n.next = node;
+        }
+    }
+
+    // Display list
+    public void show() {
+        Node n = head;
+        while (n != null) {
+            System.out.print(n.data + " ");
+            n = n.next;
+        }
+        System.out.println();
+    }
+
+    // Insert at start
+    public void insertAtStart(int data) {
+        Node node = new Node();
+        node.data = data;
+        node.next = head;
+        head = node;
+    }
+
+    // Insert at given index
+    public void insertAt(int index, int data) {
+        if (index == 0) {
+            insertAtStart(data);
+            return;
+        }
+
+        Node node = new Node();
+        node.data = data;
+
+        Node n = head;
+        for (int i = 0; i < index - 1; i++) {
+            if (n == null) {
+                throw new IndexOutOfBoundsException("Index out of range");
+            }
+            n = n.next;
+        }
+        node.next = n.next;
+        n.next = node;
+    }
+
+    // Delete by index
+    public void delete(int index) {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        if (index == 0) {
+            head = head.next;
+            return;
+        }
+
+        Node n = head;
+        Node n1 = null;
+        for (int i = 0; i < index - 1; i++) {
+            if (n.next == null) {
+                throw new IndexOutOfBoundsException("Index out of range");
+            }
+            n = n.next;
+        }
+        n1 = n.next;
+        if (n1 != null) {
+            n.next = n1.next;
+        }
+    }
+
+    // Main method to test
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        list.insert(18);
+        list.insert(22);
+        list.insert(34);
+        list.show();
+
+        list.insertAtStart(10);
+        list.show();
+
+        list.insertAt(2, 99);
+        list.show();
+
+        list.delete(1);
+        list.show();
+    }
+}
